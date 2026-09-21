@@ -1,0 +1,30 @@
+services:
+  backend:
+    build:
+      # Build the backend image using the Dockerfile inside ./backend.
+      context: ./backend          
+    container_name: ai_analyst_backend
+
+    #your code is mounted directly into the container.
+    volumes:
+    - ./backend:/app
+    ports:
+      -"8000:8000"
+    env_file:
+    - .env
+ 
+    # Start the db and ai-service services before starting the backend.
+    depends_on:
+      #-db
+      -ai-service
+  
+  ai-service:
+    build:
+      context: ./ai-service
+    container_name: ai_analyst
+    volumes:
+      - ./ai-service:/app
+    ports:
+      -"8001:8001"
+
+  
