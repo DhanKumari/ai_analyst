@@ -13,7 +13,7 @@ env/
 db.sqlite3
 media/
 staticfiles/
-
+notes.txt
 # Environment variables
 .env
 .env.*
@@ -38,3 +38,4 @@ docker-compose.override.yml
 # Temporary files
 *.tmp
 *.temp
+

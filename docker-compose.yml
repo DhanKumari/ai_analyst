@@ -18,6 +18,7 @@ services:
 
     # Start the AI service before starting the backend.
     depends_on:
+      - db
       - ai-service
 
   ai-service:
@@ -39,6 +40,9 @@ services:
       POSTGRES_DB: ai_analyst
       POSTGRES_USER: ai_analyst
       POSTGRES_PASSWORD: ai_password
+    
+    ports:
+      - "5433:5432"
 
     #Inside the PostgreSQL container, PostgreSQL stores its actual database files at:
     volumes:
