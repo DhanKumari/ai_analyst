@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/ai-health/', ai_health_check),
+    path('api/ai-health/', ai_health_check),
     path('api/',include('datasets.urls'))
 ]
 

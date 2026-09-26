@@ -21,6 +21,9 @@ class DatasetModel(models.Model):
     )
     row_count = models.IntegerField(null=True, blank=True)
     column_count = models.IntegerField(null=True, blank=True)
+    # Fastapi reponse 
+    profile = models.JSONField(null=True, blank=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
